@@ -16,3 +16,15 @@
 .pt-5 {
     padding-top: 5px !important;
 }
+.wrap-list{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 40ch;
+}
+.f-18{
+    font-size: 18px;
+}
+.f-14{
+    font-size: 14px;
+}
