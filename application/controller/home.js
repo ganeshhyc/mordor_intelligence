@@ -3,6 +3,7 @@ myApp.controller("homeCtrl",function($scope,$http){
         "recent_search":[],
         "dataSet":[]
     };
+    $scope.dataObj = {};
     $scope.dataSearch = [];
     $scope.searchFlag = 0;
     $scope.sort = ["date","cost"];
@@ -29,4 +30,7 @@ myApp.controller("homeCtrl",function($scope,$http){
         $scope.dataSearch = $scope.data.dataSet;
         $scope.searchStr = "";
     };
+    $scope.setModal = function(data){
+        $scope.dataObj = data;
+    }
 })

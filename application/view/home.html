@@ -32,26 +32,44 @@
             </div>
         </div>
         <br><br>
-        <section ng-repeat="result in dataSearch | orderBy : sortBy">
+        <a ng-repeat="result in dataSearch | orderBy : sortBy" ng-click="setModal(result)" data-toggle="modal" data-target="#modalCenter">
             <div class="container py-3">
                 <div class="card">
-                <div class="row ">
-                    <div class="col-md-4">
-                        <img ng-src="{{result.image}}" width="190px">
-                    </div>
-                    <div class="col-md-8 px-3">
-                        <div class="card-block px-3">
-                        <h4 class="card-title">{{result.title}}</h4>
-                        <p class="card-text f-14">{{result.shortDes}}</p>
-                        <small class="text-muted">PUBLISHED : {{result.date | date :'medium'}}</small><br>
-                        <br><small class="text-muted">COST OF REPORT : ${{result.cost}}</small>
+                    <div class="row ">
+                        <div class="col-md-4">
+                            <img ng-src="{{result.image}}" width="190px">
+                        </div>
+                        <div class="col-md-8 px-3">
+                            <div class="card-block px-3">
+                                <h4 class="card-title">{{result.title}}</h4>
+                                <p class="card-text f-14">{{result.shortDes}}</p>
+                                <small class="text-muted">PUBLISHED : {{result.date | date :'medium'}}</small><br>
+                                <br><small class="text-muted">COST OF REPORT : ${{result.cost}}</small>
+                            </div>
                         </div>
                     </div>
-            
-                    </div>
-                </div>
                 </div>
             </div>
-        </section>
+        </a>
     </div>
+      
+      <!-- Modal -->
+      <div class="modal fade" id="modalCenter" tabindex="-1" role="dialog" aria-labelledby="modalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title f-14" id="modalLongTitle">{{dataObj.title}}</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <small>{{dataObj.shortDes}}</small>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
 </div>
