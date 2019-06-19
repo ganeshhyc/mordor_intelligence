@@ -1,3 +1,18 @@
 .mw-900{
     max-width: 900px !important;
 }
+.w-100{
+    width: 100% !important;
+}
+.h-45{
+    height: 45px !important;
+}
+.pri-color{
+    background-color: #5cc4c7;
+}
+.lh-50{
+    line-height: 50px !important;
+}
+.pt-5 {
+    padding-top: 5px !important;
+}
